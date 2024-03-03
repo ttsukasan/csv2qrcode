@@ -5,14 +5,18 @@ import pyqrcode
 import sys
 import time
 
+########################################
+
+# SVGファイル作成の設定 (0: 作成しない, 1: 作成する)
+OUTPUT_SVG = 1
+
+# EPSファイル作成の設定 (0: 作成しない, 1: 作成する)
+OUTPUT_EPS = 1
+
 # QRコード出力時の拡大率
 RENDERING_SCALE = 4
 
-# SVGファイルを出力するかどうかを制御するグローバル変数 (0: 出力しない, 1: 出力する)
-OUTPUT_SVG = 1
-
-# EPSファイルを出力するかどうかを制御するグローバル変数 (0: 出力しない, 1: 出力する)
-OUTPUT_EPS = 1
+########################################
 
 def create_folder():
     current_datetime = datetime.now().strftime('%Y%m%d%H%M%S')
@@ -23,9 +27,8 @@ def process_csv(file_path, folder_name):
     processed_count = 0
     with open(file_path, newline='', encoding='utf-8') as csvfile:
         reader = csv.reader(csvfile)
-        next(reader)  # ヘッダーをスキップ
+        next(reader)
         for row in reader:
-            # 空行を無視する
             if not row:
                 continue
             content = row[1]
