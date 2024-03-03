@@ -42,7 +42,7 @@ def process_csv(file_path, folder_name):
             if OUTPUT_EPS:
                 eps_filename = f"{filepath_bytes.decode()}.eps"
                 url.eps(eps_filename, scale=RENDERING_SCALE)
-            print(f"+ {row[0]}.eps / svg")
+            print(f"+ {row[0]}")
             processed_count += 1
 
     return processed_count
@@ -63,5 +63,5 @@ if __name__ == "__main__":
 
         print(f"\n{processed_count}件のQRコードを生成しました。")
 
-        print("何かキーを入力してください...", end='')
+        print("何かキーを押して終了します", end='')
         input()
