@@ -1,7 +1,16 @@
+
 # csv2qrcode
 
 CSVファイルの内容からQRコードを一括作成するスクリプトです。
+
 EPS,SVGファイルの出力に対応しています。
+
+<img alt="kaden1" width="300" src="https://github.com/ttsukasan/csv2qrcode/assets/30304956/da41f512-910c-433a-8789-4ecaeab2530a" />
+
+👇 csv2qrcode ! 🐍
+
+<img alt="kaden2" width="300" src="https://github.com/ttsukasan/csv2qrcode/assets/30304956/0630f9cf-516b-42ff-9aa5-8f8880da73e6" />
+
 
 ## 動作環境
 
@@ -21,5 +30,6 @@ Windows
 2. list.csv を csv2qrcode.py にドラッグアンドドロップ
 
 コマンドラインが表示され、処理結果が表示されます。
+
 現在時刻のフォルダが作成され、中に出力されたファイルが配置されます。
 
