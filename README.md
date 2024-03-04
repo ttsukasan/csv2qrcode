@@ -24,10 +24,12 @@ Windows
     - コマンドラインで `pip install pyqrcode` を実行してください。
 3. csv2qrcode.py, list.csv を任意のフォルダに保存
 
+
 ## 使い方
 
 1. list.csv にデータを入力
-2. list.csv を csv2qrcode.py にドラッグアンドドロップ
+2. csv2qrcode.py を実行
+3. ファイル選択のダイアログで list.csv を選択
 
 コマンドラインが表示され、処理結果が表示されます。
 
