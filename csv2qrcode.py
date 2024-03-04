@@ -1,9 +1,11 @@
-import csv
-from datetime import datetime
 import os
+import csv
 import pyqrcode
-import sys
+from datetime import datetime
 import time
+import tkinter as tk
+from tkinter import filedialog
+import sys
 
 ########################################
 
@@ -17,6 +19,12 @@ OUTPUT_EPS = 1
 RENDERING_SCALE = 4
 
 ########################################
+
+def select_csv_file():
+    root = tk.Tk()
+    root.withdraw()
+    file_path = filedialog.askopenfilename(filetypes=[('CSV Files', '*.csv')])
+    return file_path
 
 def create_folder():
     current_datetime = datetime.now().strftime('%Y%m%d%H%M%S')
@@ -49,19 +57,22 @@ def process_csv(file_path, folder_name):
 
 if __name__ == "__main__":
     if len(sys.argv) != 2:
-        print("CSVファイルを指定してください。")
+        file_path = select_csv_file()
+        if not file_path:
+            print("CSVファイルが選択されませんでした。")
+            exit()
     else:
-        csv_file = sys.argv[1]
-        if not os.path.isfile(csv_file):
+        file_path = sys.argv[1]
+        if not os.path.isfile(file_path):
             print("指定されたファイルが見つかりません。")
             sys.exit(1)
-        
-        folder_name = create_folder()
-        print(f"{folder_name}/\n")
+      
+    folder_name = create_folder()
+    print(f"{folder_name}/\n")
 
-        processed_count = process_csv(csv_file, folder_name)
+    processed_count = process_csv(file_path, folder_name)
 
-        print(f"\n{processed_count}件のQRコードを生成しました。")
+    print(f"\n{processed_count}件のQRコードを生成しました。")
 
-        print("何かキーを押して終了します", end='')
-        input()
+    print("何かキーを押して終了します", end='')
+    input()
