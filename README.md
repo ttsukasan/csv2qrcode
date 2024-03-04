@@ -9,7 +9,7 @@ EPS,SVGファイルの出力に対応しています。
 
 👇 csv2qrcode ! 🐍
 
-<img alt="kaden2" width="300" src="https://github.com/ttsukasan/csv2qrcode/assets/30304956/0630f9cf-516b-42ff-9aa5-8f8880da73e6" />
+<img alt="kaden2" width="300" src="https://github.com/ttsukasan/csv2qrcode/assets/30304956/8616e745-5441-427a-854c-146ded484d48" />
 
 
 ## 動作環境
